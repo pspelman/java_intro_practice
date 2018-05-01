@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
 
@@ -81,6 +83,30 @@ public class Main {
 
         System.out.println(strMan.concatSubstring(str_one, start_idx, end_idx, str_two));
 
+
+        ArrayPractice holder = new ArrayPractice();
+        holder.arrayHolder.add("things");
+        holder.arrayHolder.add("and");
+        holder.arrayHolder.add("stuff");
+
+
+        for (Iterator<String> iterator = holder.arrayHolder.iterator(); iterator.hasNext(); ) {
+            String item = iterator.next();
+            System.out.println(item);
+
+//            System.out.println(holder.arrayHolder.get(1));
+        }
+
+        for (int j = 0; j < holder.arrayHolder.size(); j++) {
+            System.out.printf("Word: %s%n", holder.arrayHolder.get(j));
+
+        }
+
+        for (String thing : holder.arrayHolder) {
+            System.out.println(thing);
+        }
+
+        
 
     }
 
