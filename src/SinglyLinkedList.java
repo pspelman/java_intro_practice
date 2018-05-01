@@ -1,11 +1,27 @@
 public class SinglyLinkedList {
     public static void main(String[] args) {
 
-
-
-
-
-
+//        SLL mySLL = new SLL();
+//
+//        mySLL.add(2);
+//
+//        System.out.println("current head: " + mySLL.head);
+//
+//        mySLL.add(4);
+//        System.out.println("current head: " + mySLL.head.value);
+//
+//        mySLL.add(6);
+////        System.out.println("current head: " + mySLL.head.value);
+//        mySLL.add(5);
+//        mySLL.add(3);
+//
+//        mySLL.printValues();
+//
+//        System.out.println("REMOVE TEST");
+//        mySLL.remove();
+//        mySLL.remove();
+//        mySLL.remove();
+//        mySLL.remove();
     }
 
     static class SLL {
