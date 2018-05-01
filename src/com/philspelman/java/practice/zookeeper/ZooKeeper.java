@@ -36,6 +36,39 @@ public class ZooKeeper {
         bob.setSpecies("G money g");
 
         System.out.println(bob + "'s species: " + bob.getSpecies());
+        System.out.printf("%n%n%n");
+
+        System.out.println("Making a dragon!");
+        System.out.println();
+        Dragon dragon = new Dragon("Mr. Draggles");
+        System.out.println("Your dragon's name: " + dragon);
+
+        System.out.println(dragon + "'s Energy: " + dragon.energyLevel);
+        System.out.println();
+
+
+        dragon.fly();
+        dragon.fly();
+        dragon.fly();
+        dragon.fly();
+        dragon.fly();
+        dragon.fly();
+        dragon.displayEnergy();
+        dragon.eatHumans();
+        dragon.displayEnergy();
+        dragon.attackTown();
+        dragon.displayEnergy();
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
