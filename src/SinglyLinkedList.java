@@ -86,7 +86,79 @@ public class SinglyLinkedList {
                 System.out.println();
             }
         }
-    }
+
+
+        public Node find(double val) {
+            //look for the val
+            if (this.head == null) {
+                System.out.println("No such value in list");
+                return null;
+            } else {
+                Node runner = this.head;
+                while (runner.next != null) {
+                    if (runner.value == val) {
+                        return runner;
+                    } else {
+                        runner = runner.next;
+                    }
+                }
+                System.out.println("value not found in list");
+                return null;
+            }
+
+        }
+
+
+        boolean removeAt(int removal_position) {
+            System.out.println("trying to remove node at removal_position: " + removal_position);
+            if (removal_position == 0) {
+                removal_position = 1;
+            }
+            if (this.head == null) {
+                System.out.println("head is null...return");
+                return false;
+            } else {
+                int counter = 1;
+                Node runner = this.head;
+                while (counter < removal_position) {
+                    System.out.println("Counter < removal_position... counter: " + counter);
+                    if (removal_position - 1 < counter && runner.next == null) {
+                        System.out.println("The removal position is beyond the size of the list");
+                        return false;
+                    } else if (removal_position - 1 == counter) {      //the NEXT NODE is to be removed (if it's there)
+                        System.out.println("removal_position - 1: " + (removal_position - 1) + " & counter: " + counter);
+                        if (runner.next == null) {
+                            System.out.println("no node at that position, ");
+                            return false;
+                        } else {                                //there IS a node at that removal_position...what about after it?
+                            if (runner.next.next == null) {     //nothing after the removal position so point current runner's next to null
+                                runner.next = null;
+                                System.out.println("Successfully removed node at position: " + removal_position);
+                                return true;
+                            } else {                            //something came after the spot to remove, so point the current runner's .next at it (cut out the middle guy
+                                runner.next = runner.next.next;
+                                System.out.println("Successfully removed node at position: " + removal_position);
+                                return true;
+                            }
+                        }
+                    }
+                    else {
+                        if (runner.next == null) {
+                            System.out.println("Reached end of list...it's not as long as you thought");
+                            System.out.println("final length: " + counter);
+                            return false;
+                        } else {
+                            runner = runner.next;
+                            counter++;
+                        }
+                    }
+                }
+
+                }
+                return false;
+            }
+
+        }
 
     static class Node {
         double value;
