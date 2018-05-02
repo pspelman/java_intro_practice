@@ -6,6 +6,12 @@ public class Human {
     private int intelligence;
     private int stealth;
     private int health;
+    private int max_health;
+
+
+    protected void setHealth(int health) {
+        this.health = health;
+    }
 
     public String getName() {
         return name;
@@ -48,9 +54,12 @@ public class Human {
         System.out.println(this + "'s current health: " + this.health);
     }
 
-    public void setHealth(int health) {
+    public void addHealth(int health) {
         if (health + this.health < 0) {
             this.health = 0;
+        } else if (health + this.health >= max_health) {
+            System.out.println("Setting health to max: " + max_health);
+            this.health = max_health;
         } else {
             this.health += health;
         }
@@ -63,18 +72,31 @@ public class Human {
     }
 
     Human(String name) {
-        this(name, 3, 3, 3, 100);
+        this(name, 100, 3, 3, 3);
     }
 
-    Human(String name, int stealth, int strength, int intelligence, int health) {
+    Human(String name, int health) {
+            this(name, health, 3, 3, 3);
+        }
+
+
+    Human(String name, int health, int stealth, int strength, int intelligence) {
         this.name = name;
-        this.strength = 3;
-        this.intelligence = 3;
-        this.stealth = 3;
-        this.health = 100;
+        this.strength = strength;
+        this.intelligence = intelligence;
+        this.stealth = stealth;
+        this.health = health;
+        setMaxHealth(health);
 
     }
 
+    private void setMaxHealth() {
+        setMaxHealth(this.health);
+    }
+
+    private void setMaxHealth(int max_health) {
+        this.max_health = max_health;
+    }
 
 
     public void attack(Human opponent) {
@@ -82,7 +104,7 @@ public class Human {
         if (opponent.getHealth() <= 0) {
             System.out.println(opponent + " cannot be attacked anymore... ** " + this + " does victory dance **");
         }
-        opponent.setHealth(-this.strength);
+        opponent.addHealth(-this.strength);
 
     }
 
@@ -93,4 +115,7 @@ public class Human {
         return this.name;
     }
 
+    public int getMax_health() {
+        return max_health;
+    }
 }

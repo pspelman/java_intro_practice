@@ -1,5 +1,3 @@
-import com.sun.tools.hat.internal.util.ArraySorter;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 

@@ -21,6 +21,10 @@ public class DnDTest {
 
         paul.attack(steve);
 
+        Wizard wiz = new Wizard("Wizzy");
+        Ninja jon = new Ninja("Jon");
+
+        System.out.println("wizz:" + wiz);
 
 
     }
