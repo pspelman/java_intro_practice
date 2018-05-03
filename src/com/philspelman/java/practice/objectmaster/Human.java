@@ -8,12 +8,6 @@ public class Human {
     private int health;
     private int max_health;
 
-    private static int numberOfHumans;
-
-    public static int getNumberOfHumans() {
-        return numberOfHumans;
-    }
-
 
     protected void setHealth(int health) {
         this.health = health;
@@ -63,9 +57,6 @@ public class Human {
     public void addHealth(int health) {
         if (health + this.health < 0) {
             this.health = 0;
-        } else if (health + this.health >= max_health) {
-            System.out.println("Setting health to max: " + max_health);
-            this.health = max_health;
         } else {
             this.health += health;
         }
@@ -93,7 +84,6 @@ public class Human {
         this.stealth = stealth;
         this.health = health;
         setMaxHealth(health);
-        numberOfHumans++;
 
     }
 
