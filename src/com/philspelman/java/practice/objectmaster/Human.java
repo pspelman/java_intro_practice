@@ -8,6 +8,12 @@ public class Human {
     private int health;
     private int max_health;
 
+    private static int numberOfHumans;
+
+    public static int getNumberOfHumans() {
+        return numberOfHumans;
+    }
+
 
     protected void setHealth(int health) {
         this.health = health;
@@ -87,6 +93,7 @@ public class Human {
         this.stealth = stealth;
         this.health = health;
         setMaxHealth(health);
+        numberOfHumans++;
 
     }
 
